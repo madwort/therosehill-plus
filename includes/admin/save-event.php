@@ -196,7 +196,7 @@ function rhp_create_event_ticket_product($postID, $bookingType) {
         $attribute = new WC_Product_Attribute();
         $attribute_taxonomy_id = wc_attribute_taxonomy_id_by_name('Ticket Type');
         $attribute->set_id($attribute_taxonomy_id);
-        $attribute->set_name('pa_ticket-type');
+        $attribute->set_name('Ticket Type');
         $attribute->set_options(['Full Price', 'Concessions']);
         $attribute->set_position(0);
         $attribute->set_visible(true);
@@ -257,7 +257,7 @@ function create_product_variations($product, $postID) {
         $variation->set_parent_id($product->get_id());
         $variation->set_regular_price($value);
         $variation->set_virtual('yes');
-        $variation->set_attributes(['pa_ticket-type' => $key]);
+        $variation->set_attributes(['Ticket Type' => $key]);
         $variation->save();
     }
 }
